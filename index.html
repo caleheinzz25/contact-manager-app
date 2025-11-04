@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gradient-to-br from-indigo-50 to-purple-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <!-- Header -->
+      <header class="mb-10 text-center">
+        <h1
+          class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-2"
+        >
+          Contact Manager
+        </h1>
+        <p class="text-gray-600">Keep your contacts organized in style</p>
+      </header>
+
+      <!-- Main Content -->
+      <main class="max-w-6xl mx-auto">
+        <!-- Search and Filter Section -->
+        <div class="mb-8">
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <div class="flex flex-col md:flex-row gap-4">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search contacts..."
+                class="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+              <select
+                id="categoryFilter"
+                class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                <option value="">All Categories</option>
+                <option value="friend">Friends</option>
+                <option value="family">Family</option>
+                <option value="work">Work</option>
+                <option value="client">Clients</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Contact Form -->
+        <div id="addContactForm" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+            Add New Contact
+          </h2>
+          <form id="contactForm" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label
+                  for="nickname"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nickname (Optional)</label
+                >
+                <input
+                  type="text"
+                  id="nickname"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  placeholder="Johnny"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  placeholder="+1 234 567 8900"
+                />
+              </div>
+              <div>
+                <label
+                  for="company"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Company</label
+                >
+                <input
+                  type="text"
+                  id="company"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  placeholder="Company Name"
+                />
+              </div>
+              <div>
+                <label
+                  for="jobTitle"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Job Title</label
+                >
+                <input
+                  type="text"
+                  id="jobTitle"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  placeholder="Position"
+                />
+              </div>
+              <div>
+                <label
+                  for="category"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Category</label
+                >
+                <select
+                  id="category"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                >
+                  <option value="">Select a category</option>
+                  <option value="friend">Friend</option>
+                  <option value="family">Family</option>
+                  <option value="work">Work</option>
+                  <option value="client">Client</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 mt-4"
+            >
+              Add Contact
+            </button>
+          </form>
+        </div>
+
+        <!-- Contacts List -->
+        <div id="contactsContainer">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+            Your Contacts
+          </h2>
+          <div
+            id="contactsList"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <!-- Contacts will be dynamically added here -->
+            <div class="text-center py-10 text-gray-500" id="noContactsMessage">
+              No contacts yet. Add your first contact!
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Add Contact Button -->
+      <div class="fixed bottom-6 right-6">
+        <button
+          id="addContactBtn"
+          class="floating-btn w-14 h-14 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex items-center justify-center text-2xl shadow-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300"
+        >
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
